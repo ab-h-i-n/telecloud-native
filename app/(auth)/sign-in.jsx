@@ -1,10 +1,14 @@
 import { View, Text, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import centerImage from "../../assets/images/auth_center.png";
+import { SafeAreaView } from "react-native-safe-area-context";
+import InputBox from "../../components/InputBox";
 
 const SignIn = () => {
+  const [form, setForm] = useState({});
+
   return (
-    <View className="h-full bg-primary px-[19px] py-[74px] items-center">
+    <SafeAreaView className="h-full bg-primary px-[19px] py-[74px] items-center">
       {/* center image  */}
       <Image source={centerImage} className="h-[289px] w-[309px]" />
 
@@ -13,9 +17,25 @@ const SignIn = () => {
         Welcome to, TeleCloud
       </Text>
 
-      {/* input  box  */}
+        {/* input  box email  */}
+        <InputBox
+          placeHolder="Enter your email"
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e })}
+          otherStyles="mt-[23px]"
+          keyboardType="email-address"
+        />
 
-    </View>
+        {/* input box password  */}
+        <InputBox
+          placeHolder="Enter your password"
+          value={form.password}
+          onChange={(e) => setForm({ ...form, password: e })}
+          otherStyles="mt-[23px]"
+          keyboardType="password"
+        />
+
+    </SafeAreaView>
   );
 };
 
