@@ -6,7 +6,7 @@ import InputBox from "../../components/InputBox";
 import CustomButton from "../../components/CustomButton";
 import { Link } from "expo-router";
 
-const SignIn = () => {
+const SignUp = () => {
   const [form, setForm] = useState({});
 
   useEffect(() => {
@@ -16,14 +16,31 @@ const SignIn = () => {
   return (
     <SafeAreaView className="h-full bg-primary ">
       <ScrollView>
-        <View className="px-[19px] py-[74px] items-center">
+        <View className="px-[19px] py-[30px] items-center">
           {/* center image  */}
-          <Image source={centerImage} className="h-[289px] w-[309px]" />
+          <Image source={centerImage} className="h-[200px] w-[204px]" />
 
           {/* welcome text  */}
           <Text className="text-white font-pextrabold text-[32px] text-center">
             Welcome to, TeleCloud
           </Text>
+
+          {/* input  box name  */}
+          <InputBox
+            placeHolder="Enter your name"
+            value={form.name}
+            onChange={(e) => setForm({ ...form, name: e })}
+            otherStyles="mt-[23px]"
+          />
+
+          {/* input  box phone  */}
+          <InputBox
+            placeHolder="Enter your phone number"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, phone_number: e })}
+            otherStyles="mt-[23px]"
+            keyboardType="number-pad"
+          />
 
           {/* input  box email  */}
           <InputBox
@@ -44,14 +61,15 @@ const SignIn = () => {
           />
 
           {/* Sign In buton  */}
-          <CustomButton>Sign In</CustomButton>
+          <CustomButton>Sign Up</CustomButton>
 
           {/* sign up link  */}
           <Link
-            href="(auth)/sign-up"
+            href="(auth)/sign-in"
             className="text-white font-pregular text-[16px] mt-[32px]"
           >
-            Don't have an account? <Text className="text-[17px]">Sign Up</Text>
+            Already have an account?{" "}
+            <Text className="text-[17px]">Sign In</Text>
           </Link>
         </View>
       </ScrollView>
@@ -59,4 +77,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
