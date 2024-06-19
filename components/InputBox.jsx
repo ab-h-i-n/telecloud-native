@@ -21,7 +21,7 @@ const InputBox = ({
         placeholderTextColor={"#9b9b9b55"}
         value={value}
         onChangeText={onChange}
-        className="text-white text-[16px] w-full h-full px-[20px] bg-transparent"
+        className="text-white text-[16px] w-full h-full px-[20px] bg-transparent font-pregular"
         secureTextEntry={keyboardType === "password" && !showPassword}
       />
 
