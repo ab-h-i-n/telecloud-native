@@ -5,8 +5,10 @@ import chevronRight from "../assets/icons/chevron_right.png";
 
 const Folder = ({ folder }) => {
   return (
-    <TouchableOpacity activeOpacity={0.6}>
-      <View className="flex-row gap-x-3 items-end">
+    <TouchableOpacity
+        activeOpacity={0.6}
+    >
+      <View className="flex-row gap-x-3 items-end h-[82px]">
         {/* icon  */}
         <Image
           source={folderIcon}

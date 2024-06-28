@@ -8,7 +8,7 @@ const CloudScreen = () => {
     {
       name: "My Files",
       date: "12th June 2021",
-      items: 12,
+      items: 10,
     },
     {
       name: "Shared with me",
@@ -23,9 +23,9 @@ const CloudScreen = () => {
   ];
 
   return (
-    <SafeAreaView className="bg-primary h-full ">
-      <ScrollView>
-        <View className="mx-[20px]">
+    <SafeAreaView className="bg-primary h-full">
+      <ScrollView className="h-full">
+        <View className="h-full mx-[20px]">
           {folders.map((folder, index) => {
             console.log(folder);
             return <Folder folder={folder} key={index} />;
