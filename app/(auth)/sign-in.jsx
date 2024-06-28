@@ -7,7 +7,10 @@ import CustomButton from "../../components/CustomButton";
 import { Link } from "expo-router";
 
 const SignIn = () => {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    email : "",
+    password : ""
+  });
 
   useEffect(() => {
     console.log(form);
@@ -48,7 +51,8 @@ const SignIn = () => {
 
           {/* sign up link  */}
           <Link
-            href="(auth)/sign-up"
+            // href="(auth)/sign-up"
+            href={"/recent"}
             className="text-white font-pregular text-[16px] mt-[32px]"
           >
             Don't have an account? <Text className="text-[17px]">Sign Up</Text>

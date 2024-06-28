@@ -7,7 +7,12 @@ import CustomButton from "../../components/CustomButton";
 import { Link } from "expo-router";
 
 const SignUp = () => {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    name  : "",
+    phone : "",
+    email : "",
+    password : ""
+  });
 
   useEffect(() => {
     console.log(form);

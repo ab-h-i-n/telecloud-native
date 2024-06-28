@@ -1,7 +1,5 @@
 import { Text, TouchableOpacity } from "react-native";
 import React from "react";
-import LinearGradient from "react-native-linear-gradient";
-import { StyleSheet } from "react-native";
 
 const CustomButton = ({
   children,
@@ -10,24 +8,6 @@ const CustomButton = ({
   isLoading,
   handlePress,
 }) => {
-
-  var styles = StyleSheet.create({
-    linearGradient: {
-      flex: 1,
-      paddingLeft: 15,
-      paddingRight: 15,
-      borderRadius: 5,
-    },
-    buttonText: {
-      fontSize: 18,
-      fontFamily: "Gill Sans",
-      textAlign: "center",
-      margin: 10,
-      color: "#ffffff",
-      backgroundColor: "transparent",
-    },
-  });
-
   return (
     <TouchableOpacity
       onPress={handlePress}
@@ -36,16 +16,9 @@ const CustomButton = ({
       }`}
       disabled={isLoading}
     >
-      {/* <LinearGradient
-        colors={["#4c669f", "#3b5998", "#192f6a"]}
-        style={styles.linearGradient}
-      > */}
-        <Text
-          className={`text-primary text-[16px] font-psemibold ${textStyles}`}
-        >
-          {children}
-        </Text>
-      {/* </LinearGradient> */}
+      <Text className={`text-primary text-[16px] font-psemibold ${textStyles}`}>
+        {children}
+      </Text>
     </TouchableOpacity>
   );
 };
